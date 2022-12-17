@@ -36,13 +36,13 @@
                     <input type="date" min="2022-01-01" max="2100-12-31">
                 </form>
             </section>
-            <section class="customers">
+            <form action="customer page" class="customers">
                 <select name="customer">
                     <option value="customer1">customer1</option>
                     <option value="customer2">customer2</option>
                     <option value="customer3">customer3</option>
                 </select>
-            </section>
+            </form>
             <form action="reg customer" class="regCustomer">
                 <aside>
                     <label for="fname">first name: </label>

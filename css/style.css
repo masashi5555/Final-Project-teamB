@@ -66,7 +66,7 @@ main {
     row-gap: 3vh;
 }
 
-.navigation > form {
+.regCustomer {
     background-color: antiquewhite;
     padding-top: 3vh;
     padding-bottom: 3vh;

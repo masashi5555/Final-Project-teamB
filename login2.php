@@ -12,7 +12,10 @@
 </head>
 <body>
     <div id="login">
-        <form name='form-login' action=" http://localhost/finalproject/login.php" method="POST">
+        <!-- <form name='form-login' action="http://localhost/finalproject/login.php" method="POST"> -->
+            <!-- This action above is depending on person. just in case i didnt delete it. -->
+        <form name='form-login' action="http://localhost:8080/finalAssignment/login.php" method="POST">
+            <!-- This action above is Riku's path. you can delete it if you need!!! -->
         <span class="fontawesome-user"></span>
             <input type="text" id="user" placeholder="Username" name="email">
             

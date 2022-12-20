@@ -43,7 +43,7 @@
                     <option value="customer3">customer3</option>
                 </select>
             </form>
-            <form action="reg customer" class="regCustomer">
+            <form action="regCustomer.php" class="regCustomer" method="POST">
                 <aside>
                     <label for="fname">first name: </label>
                     <input type="text" name="fname">
@@ -51,10 +51,6 @@
                 <aside>
                     <label for="lname">last name: </label>
                     <input type="text" name="lname">
-                </aside>
-                <aside>
-                    <label for="id">id: </label>
-                    <input type="text" name="id">
                 </aside>
                 <aside>
                     <label for="phone">phone number: </label>

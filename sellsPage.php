@@ -46,19 +46,19 @@
             <form action="regCustomer.php" class="regCustomer" method="POST">
                 <aside>
                     <label for="fname">first name: </label>
-                    <input type="text" name="fname">
+                    <input type="text" name="fname" value="john">
                 </aside>
                 <aside>
                     <label for="lname">last name: </label>
-                    <input type="text" name="lname">
+                    <input type="text" name="lname" value="doe">
                 </aside>
                 <aside>
                     <label for="phone">phone number: </label>
-                    <input type="tel" name="phone">
+                    <input type="tel" name="phone" value="222-222-2222">
                 </aside>
                 <aside>
                     <label for="email">email: </label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" value="johndoe@gmail.com">
                 </aside>
                 <aside>
                     <input type="submit" value="register">

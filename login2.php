@@ -17,10 +17,10 @@
         <form name='form-login' action="http://localhost:8080/finalAssignment/login.php" method="POST">
             <!-- This action above is Riku's path. you can delete it if you need!!! -->
         <span class="fontawesome-user"></span>
-            <input type="text" id="user" placeholder="Username" name="email">
+            <input type="text" id="user" placeholder="Username" name="email" value="masa@com">
             
         <span class="fontawesome-lock"></span>
-            <input type="password" id="pass" placeholder="Password" name="pass">
+            <input type="password" id="pass" placeholder="Password" name="pass" value="test">
         
         <input type="submit" value="Login">
         

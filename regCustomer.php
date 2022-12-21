@@ -1,11 +1,25 @@
 <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        session_start();
+        $logUser = $_SESSION['logUser'];
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
+        $uid = 0; //just initialize.
 
-        echo $fname;
-        header("Location: ./sellsPage.php?msg=done");
-    }
+        $file = fopen('./data/user_info.json', 'r');
+        $decodedData = json_decode(fread($file, filesize('./data/user_info.json')), true);
+        foreach ($decodedData as $data) {
+            if ($data['pass'] == $logUser['pass'] && $data['email'] == $logUser['email']) {
+                $uid = $data['id'];
+            }
+        }
+
+
+        $dbcon = new mysqli('localhost', 'root', '', 'demo_db');
+        $cmd = "INSERT INTO customer (uid, fname, lname, email, phone) VALUES ('$uid', '$fname', '$lname', '$email', '$phone')";
+        $dbcon -> query($cmd);
+        
+     }
 ?>

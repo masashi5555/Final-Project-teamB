@@ -39,11 +39,14 @@
             <form action="customerPage.php" class="customers" method="POST">
                 <select name="customer">
                     <?php
+                        session_start();
+                        $id = $_SESSION['logUser']['id'];
                         $dbcon = new mysqli('localhost', 'root', '', 'demo_db');
-                        $cmd = "SELECT * FROM customer";
+                        // $cmd = "SELECT * FROM customer";
+                        $cmd = "SELECT * FROM customer WHERE uid = $id";
+                        // if some error happened, please check out the argument of mysqli, database name, and table name!!
                         $search = $dbcon -> query($cmd);
                         $data = $search -> fetch_all();
-                        print_r($data);
                         foreach ($data as $eachData) {
                             echo "<option value=".$eachData[0].">".$eachData[2]." ".$eachData[3].": ".$eachData[0]."</option>";
                         }

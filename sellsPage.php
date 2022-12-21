@@ -36,12 +36,20 @@
                     <input type="date" min="2022-01-01" max="2100-12-31">
                 </form>
             </section>
-            <form action="customer page" class="customers">
+            <form action="customerPage.php" class="customers" method="POST">
                 <select name="customer">
-                    <option value="customer1">customer1</option>
-                    <option value="customer2">customer2</option>
-                    <option value="customer3">customer3</option>
+                    <?php
+                        $dbcon = new mysqli('localhost', 'root', '', 'demo_db');
+                        $cmd = "SELECT * FROM customer";
+                        $search = $dbcon -> query($cmd);
+                        $data = $search -> fetch_all();
+                        print_r($data);
+                        foreach ($data as $eachData) {
+                            echo "<option value=".$eachData[0].">".$eachData[2]." ".$eachData[3].": ".$eachData[0]."</option>";
+                        }
+                    ?>
                 </select>
+                <input type="submit" value="jump to page">
             </form>
             <form action="regCustomer.php" class="regCustomer" method="POST">
                 <aside>

@@ -25,6 +25,7 @@
 
         $search = $dbcon -> query("SELECT * FROM customer");
         $data = $search -> fetch_all();
+        
      }
 ?>
 

@@ -23,7 +23,10 @@
         </section>
         <figure>
             <figcaption>
-                <h1>person's name here</h1>
+                <?php
+                    session_start();
+                    echo "<h1>".$_SESSION['logUser']['first_name']." ".$_SESSION['logUser']['last_name']."</h1>";
+                ?>
                 <a href="logout">logout</a>
             </figcaption>
             <img src="img/image1.png" alt="person's picture">

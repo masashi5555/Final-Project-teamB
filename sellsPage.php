@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .grpah {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -81,7 +87,14 @@
             </form>
         </section>
         <section class="graph">
-            <h2>graph will be here</h2>
+            <?php 
+                include './sales_manager.php';
+            ?>                    
+        </section>
+        <section class="graph">
+            <?php 
+                include './sales_month.php';
+            ?>                    
         </section>
     </main>
 </body>

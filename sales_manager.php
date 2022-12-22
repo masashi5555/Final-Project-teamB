@@ -1,4 +1,4 @@
-<?php include './header.php'; ?>
+<!-- <?php include './header.php'; ?> -->
 <?php include './config.php'; ?>
 <?php 
   $con = mysqli_connect($dbConfig[0],$dbConfig[1],$dbConfig[2],$dbConfig[3]);
@@ -39,6 +39,6 @@
     </script>
   </head>
   <body>
-    <div id="piechart" style="width: 1700px; height: 700px;"></div>    
+    <div id="piechart" style="width: 500px; height: 300px;"></div>    
   </body>
 </html>

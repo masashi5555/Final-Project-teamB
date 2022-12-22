@@ -1,4 +1,4 @@
-<?php include './header.php'; ?>
+<!-- <?php include './header.php'; ?> -->
 <?php include './config.php'; ?>
 <?php 
   $con = mysqli_connect($dbConfig[0],$dbConfig[1],$dbConfig[2],$dbConfig[3]);
@@ -41,11 +41,11 @@
     </script>
     <style>
         #columnchart_material{
-            position: relative; left:20vh; top:10vh;          
+            position: relative; left:0vh; top:0vh;          
         }
     </style>
   </head>
   <body>
-    <div id="columnchart_material" style="width: 1000px; height: 500px; position:relative"></div>
+    <div id="columnchart_material" style="width: 500px; height: 300px; position:relative"></div>
   </body>
 </html>

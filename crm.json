@@ -1,0 +1,30 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"crm"},
+{"type":"table","name":"sales_manager","database":"crm","data":
+[
+{"manager":"Manager 1","sales":"3000"},
+{"manager":"Manager 2","sales":"4000"},
+{"manager":"Manager 3","sales":"3000"},
+{"manager":"Manager 4","sales":"5000"},
+{"manager":"Manager 5","sales":"6000"},
+{"manager":"Manager 6","sales":"4000"}
+]
+}
+,{"type":"table","name":"sales_month","database":"crm","data":
+[
+{"month":"January","sales":"800"},
+{"month":"February","sales":"1000"},
+{"month":"March","sales":"1100"},
+{"month":"April","sales":"900"},
+{"month":"May","sales":"1200"},
+{"month":"June","sales":"800"},
+{"month":"July","sales":"1000"},
+{"month":"August","sales":"1200"},
+{"month":"September","sales":"700"},
+{"month":"October","sales":"900"},
+{"month":"November","sales":"1000"},
+{"month":"December","sales":"1200"}
+]
+}
+]

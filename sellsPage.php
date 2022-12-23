@@ -33,7 +33,6 @@
         </figure>
     </header>
     <main>
-        <section class="navigation">
             <section class="calendar">
                 <?php include 'calendar.php';?>
                 <!-- <form action="calender function">

@@ -278,7 +278,7 @@ function eliminate($idx,$appoArray){
     // }
 
     ?>
-    <form  method="POST" action="<?php echo $_SERVER['PHP_SELF']."?act=month"; ?>">
+    <form  method="POST" action="<?php echo $_SERVER['PHP_SELF']."?act=month";?>">
         <br>
         <button type="submit" name="prev" class="btn btn-primary">Prev</button> 
         <button type="submit" name="ret" class="btn btn-primary">Return</button> 

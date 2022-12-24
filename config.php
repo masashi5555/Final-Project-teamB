@@ -1,5 +1,4 @@
 <?php
-    $baseName = "http://localhost/php/FinalProjectPHP/";
-    $baseNameForRiku = "localhost:8080/finalAssignment3/";
+    $baseName = "http://localhost/php/Final-Project-teamB/";
     $dbConfig = ['localhost','root','','crm'];
 ?>

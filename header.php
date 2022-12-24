@@ -24,7 +24,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $baseName.'/sales_month.php';?>" aria-current="page">Sales by Month</a>
                     </li>
-                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $baseName.'/sales_perfomance.php';?>" aria-current="page">Sales Perfomance</a>
+                    </li>                     
                 </ul>
             </div>
         </nav>

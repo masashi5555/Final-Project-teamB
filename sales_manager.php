@@ -1,4 +1,4 @@
-<!-- <?php include './header.php'; ?> -->
+<?php include './header.php'; ?>
 <?php include './config.php'; ?>
 <?php 
   $con = mysqli_connect($dbConfig[0],$dbConfig[1],$dbConfig[2],$dbConfig[3]);
@@ -37,8 +37,13 @@
         chart.draw(data, options);
       }
     </script>
+    <style>
+      #piechart {
+        position:relative; left: 30vh;
+      }
+    </style>
   </head>
   <body>
-    <div id="piechart" style="width: 500px; height: 300px;"></div>    
+    <div id="piechart" style="width: 900px; height: 600px;"></div>    
   </body>
 </html>

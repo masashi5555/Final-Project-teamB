@@ -52,6 +52,11 @@ textarea {
 .tr {
     border: 1px solid black;
     height: 5vh;
+    transition: .4s;
+}
+
+.tr:hover {
+    background-color: azure;
 }
 
 .tr:nth-child(even) {

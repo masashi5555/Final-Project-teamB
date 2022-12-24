@@ -10,10 +10,7 @@
     Register Page<br/>
     <br/>
     <!-- action specifies where to jump to -->
-    <form method="post" action="http://localhost/final-project-teamB/info_check.php">
-    <br/>
-    <input type="text" placeholder="id" name="id" style="width:100px;"><br />
-    <br/>
+    <form method="post" action="http://localhost/final-project-teamb/Register/salesinfo.php">
     <input type="text" placeholder="first_name" name="first_name" style="width:100px;"><br />
     <br/>
     <input type="text" placeholder="last_name" name="last_name" style="width:100px;"><br />

@@ -42,9 +42,6 @@
         <section class="navigation">
             <section class="calendar">
                 <?php include 'calendar.php';?>
-                <!-- <form action="calender function">
-                    <input type="date" min="2022-01-01" max="2100-12-31">
-                </form> -->
             </section>
             <form action="customerPage.php" class="customers" method="POST">
                 <select name="customer">
@@ -87,14 +84,10 @@
             </form>
         </section>
         <section class="graph">
-            <?php 
-                include './sales_manager.php';
-            ?>                    
+            <?php include './sales_manager.php';?>                    
         </section>
         <section class="graph">
-            <?php 
-                include './sales_month.php';
-            ?>                    
+            <?php include './sales_month.php'; ?>                    
         </section>
     </main>
 </body>

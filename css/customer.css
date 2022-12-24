@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: dimgray;
+}
+
+.main {
+    background-color: ghostwhite;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 6%;
+}
+
+.above {
+    padding-top: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+    width: 25%;
+    padding: 1vh;
+    background-color: skyblue;
+}
+
+input, textarea {
+    border: 0px transparent none;
+    padding: 1vh;
+}
+
+[type="submit"] {
+    width: 50%;
+}
+
+textarea {
+    height: 30vh;
+}
+
+.table {
+    width: 70%;
+    border: 1px solid black;
+}
+
+.tr {
+    border: 1px solid black;
+    height: 5vh;
+}
+
+.tr:nth-child(even) {
+    background-color: white;
+}
+
+.td {
+    border: 1px solid black;
+    height: 3vh;
+}
+

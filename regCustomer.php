@@ -7,7 +7,7 @@
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $uid = 0; //just initialize.
-
+        
         $file = fopen('./data/user_info.json', 'r');
         $decodedData = json_decode(fread($file, filesize('./data/user_info.json')), true);
         foreach ($decodedData as $data) {

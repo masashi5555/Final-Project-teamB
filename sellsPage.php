@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .grpah {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
@@ -39,10 +46,7 @@
     <main>
         <section class="navigation">
             <section class="calendar">
-                <?php include 'calendar.php';?>
-                <!-- <form action="calender function">
-                    <input type="date" min="2022-01-01" max="2100-12-31">
-                </form> -->
+                <?php include './calendar.php';?>
             </section>
             <form action="customerPage.php" class="customers" method="POST">
                 <select name="customer">
@@ -50,7 +54,7 @@
                         session_start();
                         $id = $_SESSION['logUser']['id'];
                         $dbcon = new mysqli('localhost', 'root', '', 'demo_db');
-                        // $cmd = "SELECT * FROM customer";
+                        $cmd = "SELECT * FROM customer";
                         $cmd = "SELECT * FROM customer WHERE uid = $id";
                         // if some error happened, please check out the argument of mysqli, database name, and table name!!
                         $search = $dbcon -> query($cmd);
@@ -85,7 +89,10 @@
             </form>
         </section>
         <section class="graph">
-            <h2>graph will be here</h2>
+            <?php include './sales_manager.php';?>                    
+        </section>
+        <section class="graph">
+            <?php include './sales_month.php'; ?>                    
         </section>
     </main>
 </body>

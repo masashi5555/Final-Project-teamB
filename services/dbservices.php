@@ -37,7 +37,7 @@ class dbServices{
         }
         return false;
     }
-    function delete($date){
+    function delete($date){ //here we delete dates with delete command from sql
         // $where = "WHERE date = '2022-12-27'";
         // $deleteCmd = "DELETE FROM appo_tb WHERE date = '2022-12-27'";
         $deleteCmd = "DELETE FROM appo_tb WHERE date = '".$date."'";

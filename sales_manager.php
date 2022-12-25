@@ -1,4 +1,4 @@
-<?php include './header.php'; ?>
+<!-- <?php include './header.php'; ?> -->
 <?php include './config.php'; ?>
 <?php 
   $con = mysqli_connect($dbConfig[0],$dbConfig[1],$dbConfig[2],$dbConfig[3]);
@@ -6,8 +6,9 @@
     // echo "connected";
   }
 ?>
-<html>
-  <head>
+<!-- <html> -->
+<section>
+  <div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -42,8 +43,9 @@
         position:relative; left: 30vh;
       }
     </style>
-  </head>
-  <body>
+  </div>
+  <div>
     <div id="piechart" style="width: 900px; height: 600px;"></div>    
-  </body>
-</html>
+  </div>
+<section>
+<!-- </html> -->

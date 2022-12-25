@@ -3,7 +3,6 @@
         session_start();
         $logUser = $_SESSION['logUser'];
         $logCustomer = $_SESSION['logCustomer'];
-        
         $productName = $_POST['productName'];
         $amount = $_POST['amount'];
         $price = $_POST['price'];
@@ -17,7 +16,11 @@
         $search = $dbcon -> query($cmd);
         var_dump($dbcon -> close());
 
-        header('Location: ./customerPage.php?msg=success');
+        header('Location: ./customerPage.php?msg=post data');
 
     }
 ?>
+
+
+
+<!-- SELECT * FROM テーブル1の名前 INNER JOIN テーブル2の名前 ON テーブル1のカラム名 = テーブル2のカラム名;tbname.columnname -->

@@ -46,7 +46,7 @@
     <main>
         <section class="navigation">
             <section class="calendar">
-                <?php include 'calendar.php';?>
+                <?php include './calendar.php';?>
             </section>
             <form action="customerPage.php" class="customers" method="POST">
                 <select name="customer">

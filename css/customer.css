@@ -22,6 +22,10 @@
     justify-content: space-between;
 }
 
+h3, h2 {
+    color: azure;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -55,8 +59,12 @@ textarea {
     transition: .4s;
 }
 
-.tr:hover {
-    background-color: azure;
+.tr:nth-child(even):hover {
+    background-color: skyblue;
+}
+
+.tr:nth-child(odd):hover {
+    background-color: skyblue;
 }
 
 .tr:nth-child(even) {
@@ -66,5 +74,22 @@ textarea {
 .td {
     border: 1px solid black;
     height: 3vh;
+}
+
+
+.modal {
+    width: 30%;
+    position: fixed;
+    left: 50%;
+    bottom: 0%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalForm {
+    width: 100%;
 }
 

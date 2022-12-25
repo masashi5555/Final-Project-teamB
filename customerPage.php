@@ -13,8 +13,9 @@
         $logCustomer = $_SESSION['logCustomer'];
 
         $dbcon -> close();
-    } else if ($_GET['msg'] == 'success') {
+    } else if (isset($_GET['msg']) || isset($_GET['modal'])) {
         session_start();
+        
         $logUser = $_SESSION['logUser'];
         $cid = $_SESSION['logCustomer'][0];
 
@@ -43,7 +44,15 @@
     <link rel="stylesheet" href="css/customer.css">
 </head>
 <body>
-    <?php include './component/header.php'; ?>
+    <?php include './component/header1.php'; ?>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo './sellsPage.php' ;?>" aria-current="page">Main Page</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo './logout.php?errcheck=ok';?>" aria-current="page">Logout</a>
+        </li>
+        <?php echo " <h3>".$logCustomer[2]." ".$logCustomer[3]." </h3>" ;?>   
+    <?php include './component/header2.php'; ?>
     <main class="main">
         <section class="above" id="above">
             <form action="addProduct.php" method="POST">
@@ -78,12 +87,14 @@
         
                         foreach ($data as $eachData) {
                             echo "<tr class='tr'>";
-                                for ($i = 3 ; $i < 10 ; $i++) {
-                                    echo "<td>$eachData[$i]</td>";
+                            for ($i = 3 ; $i < 10 ; $i++) {
+                                $queryString = implode(',', $eachData);
+                                echo "<td><a href='".$_SERVER['PHP_SELF']."?modal=$queryString&id=$eachData[0]'>$eachData[$i]</a></td>";
                                 }
                             echo "</tr>";
                         }
                     ?>
+                    
                 </tbody>
             </table>
         </section>
@@ -120,8 +131,13 @@
                 chart.draw(data, options);
             }
             </script>
-            <div id="piechart" style="width: 500px; height: 300px;"></div>     -->
-        <!-- </div>
+            <div id="piechart" style="width: 500px; height: 300px;"></div>     
+        </div>
+        <?php
+            if (isset($_GET['modal'])) {
+                include './component/modal.php';
+            }
+        ?>
     </main>
 </body>
 </html>

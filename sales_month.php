@@ -1,4 +1,4 @@
-<?php include './header.php'; ?>
+<!-- <?php include './header.php'; ?> -->
 <?php include './config.php'; ?>
 <?php 
   $con = mysqli_connect($dbConfig[0],$dbConfig[1],$dbConfig[2],$dbConfig[3]);
@@ -6,8 +6,9 @@
     // echo "connected";
   }
 ?>
-<html>
-  <head>
+<!-- <html> -->
+<section>
+  <div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
@@ -44,8 +45,9 @@
             position: relative; left:30vh; top:10vh;          
         }
     </style>
-  </head>
+  </div>
   <body>
     <div id="columnchart_material" style="width: 900px; height: 400px; position:relative"></div>
   </body>
-</html>
+<!-- </html> -->
+</section>

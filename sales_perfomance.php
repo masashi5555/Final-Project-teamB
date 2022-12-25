@@ -3,7 +3,7 @@
 <?php 
   $con = mysqli_connect($dbConfig[0],$dbConfig[1],$dbConfig[2],$dbConfig[3]);
   if($con){ //set connection
-    // echo "connected";
+    echo "connected";
   }
 ?>
 
@@ -46,4 +46,3 @@
     <div id="barchart_material" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
-r

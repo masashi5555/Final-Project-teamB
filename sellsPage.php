@@ -52,7 +52,7 @@
                         session_start();
                         $id = $_SESSION['logUser']['id'];
                         $dbcon = new mysqli('localhost', 'root', '', 'demo_db');
-                        // $cmd = "SELECT * FROM customer";
+                        $cmd = "SELECT * FROM customer";
                         $cmd = "SELECT * FROM customer WHERE uid = $id";
                         // if some error happened, please check out the argument of mysqli, database name, and table name!!
                         $search = $dbcon -> query($cmd);

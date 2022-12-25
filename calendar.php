@@ -33,6 +33,8 @@ function eliminate($idx,$appoArray){
     foreach ($appoArray as $val){
         $idx2++;
         if ($idx2==$idx){
+            $date=$val['year']."-".$val['month']."-".$val['day'];
+            toDb(1,$date);
             continue;
         }
         $newArray[]=$val;   
@@ -42,14 +44,38 @@ function eliminate($idx,$appoArray){
     fclose($file);
 }
 
-// function readAppo(){
-//     $appoArray = existsData();
-//     $file = fopen("./data/appo.json",'r'); //Write down the array 
-//     fread($file,json_decode($appoArray));
-//     $appoArray[] = fread($file,json_decode($appoArray,true));
-//     fclose($file);
-//     return $appoArray;
-// }
+function toDb($del,$appointment=null){
+include './config.php';
+include_once './services/dbservices.php';
+include_once './services/logservice.php';
+include_once './services/jsonService.php';
+    $dbService = new dbServices($hostName,$userName,$password,$dbName);
+    $jsonDir='./data/appo.json';
+    $json = new jsonService($jsonDir);
+    if($dbcon = $dbService->dbConnect()){
+        echo 'Connected <br>'; //Here we push database to database in phpmyadmin
+        $data= $json->jsontoArray();
+        echo "<br><br><br>*******************<br><br><br>"; //INSERT
+        $valuesArray = [];
+        // $dbService->delete();
+        if ($del==1){
+            $dbService->delete($appointment);
+        } else {
+            if ($data!=null){
+                foreach ($data as $val){
+                    $date=$val['year']."-".$val['month']."-".$val['day'];
+                    $valuesArray=["'".$date."'","'".$val['day']."'","'".$val['month']."'","'".$val['year']."'"];
+                    if ($dbService->insert('appo_tb',$valuesArray)){
+                    }else{
+                        echo 'no';
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,32 +97,7 @@ function eliminate($idx,$appoArray){
     </style>
 </head>
 <body>
-    <?php
-        // include 'Calendar.php';
-        // $calendar = new Calendar();
-        // print_r($calendar);
-                    // if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    //     date_default_timezone_set('America/Vancouver');
-                    //     $amonth=floatval(date('m'));
-                    //     echo $amonth;
-                    //     if(isset($_POST['prev'])){
-                    //         $amonth=$amonth-1;
-                    //         print_r(date("F", mktime(0, 0, 0, $amonth, 1, 2000)));
-                    //     }else{
-                            
-                    //     }
-                    // }else{
-                    //     date_default_timezone_set('America/Vancouver');
-                    //     $countmonth=0;
-                    //     $countyear=0;
-                    //     $days = date('F Y');
-                    //     $aday=date('d');;
-                    //     $amonth=floatval(date('m'));
-                    //     print_r($amonth);
-                    //     $ayear=date('y');
-                    //     echo $days;
-                    // }
-                    ?>
+
     <form action="">
 
     <table border="1" style="text-align: center; width:80vh;">
@@ -332,6 +333,9 @@ function eliminate($idx,$appoArray){
                     ?> ;">Eliminate</button> 
     </form>
     <?php
+    toDb(0);
+    
+    
     if(isset($_GET['aday'])) {
         // print_r ($_GET['aday']);
         eliminate($_GET['aday'],$appoArray);

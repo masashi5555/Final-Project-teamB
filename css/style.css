@@ -104,3 +104,9 @@ form > aside {
     justify-content: center;
     align-items: center;
 }
+
+td {
+    width: 14%;
+    height: 5vh;
+    /* border-radius: 10px; */
+}
